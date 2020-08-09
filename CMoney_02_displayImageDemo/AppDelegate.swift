@@ -15,7 +15,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.backgroundColor = .white
+        
+        // 宣告一個 view controller 並指定背景為灰色
+        let viewController = ViewController()
+        let navController = UINavigationController(rootViewController: viewController)
+        window?.rootViewController = navController
+        
+        // 指定 root view controller
+//        self.window?.rootViewController = viewController
+        
+        self.window?.makeKeyAndVisible()
+        
         return true
     }
 
